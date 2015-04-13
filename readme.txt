@@ -56,7 +56,13 @@ Check this plugin in action <a href="http://tabsy.phpbits.net/">here</a>.
 = 1.0 =
 * Initial Plugin release
 
+= 1.1 =
+* Add Tabsy Customizer Support
+
 == Upgrade Notice ==
 
 = 1.0 =
 * Initial Plugin release
+
+= 1.1 =
+* Add Tabsy Customizer Support

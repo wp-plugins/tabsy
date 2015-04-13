@@ -34,19 +34,20 @@ if(!class_exists('WPTABSY_SHORTCODE')){
 		function shortcode_handler($atts , $content = null){
 			$pre_atts = $atts;
 			$atts = shortcode_atts(array(
+				'id'			=> uniqid(),
 	            'skin' 			=> 	null,
 	            'responsive' 	=> 	true
 	        ), $atts);
-			$classes = 'wptabsy';
+			$classes = array('wptabsy', 'wptabsy-' . $atts['id']);
 			$data = '';
 
 			if(function_exists('wptabsy_customizer')){
 		    	wptabsy_shortcode_start($pre_atts, $atts);
-		    	$classes = wptabsy_shortcode_classes( $classes );
+		    	$classes = wptabsy_shortcode_classes( $classes, $pre_atts, $atts );
 		    	$data = wptabsy_shortcode_data( $data );
 		    }
 
-		    $return = '<div class="'. $classes;
+		    $return = '<div class="'. join(' ', $classes);;
 		    if(!empty($atts['skin'])){
 		    	$return .= ' wptabsy-skin-' . $atts['skin'];
 		    }
